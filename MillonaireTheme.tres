@@ -1,0 +1,39 @@
+[gd_resource type="Theme" load_steps=9 format=2]
+
+[ext_resource path="res://ThemeElements/TemplateNormal.tres" type="StyleBox" id=1]
+[ext_resource path="res://Resoures/StyleTemplateHover.png" type="Texture" id=2]
+[ext_resource path="res://Resoures/StyleTemplateLocked.svg" type="Texture" id=3]
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 388, 44 )
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 1214, 138 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 388, 44 )
+
+[sub_resource type="StyleBoxLine" id=6]
+color = Color( 0.239216, 0.286275, 0.501961, 1 )
+grow_begin = 5.0
+grow_end = 5.0
+thickness = 4
+
+[sub_resource type="StyleBoxLine" id=5]
+color = Color( 0.207843, 0.247059, 0.470588, 1 )
+vertical = true
+
+[resource]
+Button/styles/disabled = ExtResource( 1 )
+Button/styles/focus = SubResource( 2 )
+Button/styles/hover = SubResource( 1 )
+Button/styles/normal = ExtResource( 1 )
+Button/styles/pressed = SubResource( 3 )
+HSeparator/styles/separator = SubResource( 6 )
+Panel/constants/panel = 0
+Panel/styles/panel = ExtResource( 1 )
+PanelContainer/styles/panel = ExtResource( 1 )
+VSeparator/styles/separator = SubResource( 5 )
