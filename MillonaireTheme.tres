@@ -1,12 +1,13 @@
-[gd_resource type="Theme" load_steps=9 format=2]
+[gd_resource type="Theme" load_steps=10 format=2]
 
 [ext_resource path="res://ThemeElements/TemplateNormal.tres" type="StyleBox" id=1]
 [ext_resource path="res://Resoures/StyleTemplateHover.png" type="Texture" id=2]
 [ext_resource path="res://Resoures/StyleTemplateLocked.svg" type="Texture" id=3]
+[ext_resource path="res://Resoures/StyleFocus.png" type="Texture" id=4]
 
-[sub_resource type="StyleBoxTexture" id=2]
-texture = ExtResource( 3 )
-region_rect = Rect2( 0, 0, 388, 44 )
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 1214, 138 )
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 2 )
@@ -28,7 +29,7 @@ vertical = true
 
 [resource]
 Button/styles/disabled = ExtResource( 1 )
-Button/styles/focus = SubResource( 2 )
+Button/styles/focus = SubResource( 7 )
 Button/styles/hover = SubResource( 1 )
 Button/styles/normal = ExtResource( 1 )
 Button/styles/pressed = SubResource( 3 )
