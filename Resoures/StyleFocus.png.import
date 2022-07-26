@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Seperator.png-f3eed397516aaa164ea06114209e68a1.stex"
+path="res://.import/StyleFocus.png-2754eb0a6f13905e8cd7137367c0c28f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resoures/Seperator.png"
-dest_files=[ "res://.import/Seperator.png-f3eed397516aaa164ea06114209e68a1.stex" ]
+source_file="res://Resoures/StyleFocus.png"
+dest_files=[ "res://.import/StyleFocus.png-2754eb0a6f13905e8cd7137367c0c28f.stex" ]
 
 [params]
 
