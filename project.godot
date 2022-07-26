@@ -8,9 +8,20 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Control",
+"class": "Game",
+"language": "GDScript",
+"path": "res://MillonaireQuiz.gd"
+} ]
+_global_script_class_icons={
+"Game": ""
+}
+
 [application]
 
 config/name="MillonairQuz"
+run/main_scene="res://MillonaireQuiz.tscn"
 config/icon="res://icon.png"
 
 [input]
