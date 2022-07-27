@@ -1,9 +1,10 @@
-[gd_resource type="Theme" load_steps=10 format=2]
+[gd_resource type="Theme" load_steps=11 format=2]
 
 [ext_resource path="res://ThemeElements/TemplateNormal.tres" type="StyleBox" id=1]
 [ext_resource path="res://Resoures/StyleTemplateHover.png" type="Texture" id=2]
 [ext_resource path="res://Resoures/StyleTemplateLocked.svg" type="Texture" id=3]
 [ext_resource path="res://Resoures/StyleFocus.png" type="Texture" id=4]
+[ext_resource path="res://ThemeElements/TextWhite.tres" type="DynamicFont" id=5]
 
 [sub_resource type="StyleBoxTexture" id=7]
 texture = ExtResource( 4 )
@@ -34,7 +35,9 @@ Button/styles/hover = SubResource( 1 )
 Button/styles/normal = ExtResource( 1 )
 Button/styles/pressed = SubResource( 3 )
 HSeparator/styles/separator = SubResource( 6 )
+Label/fonts/font = ExtResource( 5 )
 Panel/constants/panel = 0
 Panel/styles/panel = ExtResource( 1 )
 PanelContainer/styles/panel = ExtResource( 1 )
+RichTextLabel/fonts/normal_font = ExtResource( 5 )
 VSeparator/styles/separator = SubResource( 5 )

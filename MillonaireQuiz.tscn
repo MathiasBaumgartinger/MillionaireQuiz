@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://MillonaireTheme.tres" type="Theme" id=1]
 [ext_resource path="res://MillonaireQuiz.gd" type="Script" id=2]
@@ -17,6 +17,9 @@
 [ext_resource path="res://Resoures/Question 6 Final Answer.mp3" type="AudioStream" id=15]
 [ext_resource path="res://Resoures/Question 5 Lose.mp3" type="AudioStream" id=16]
 [ext_resource path="res://Resoures/Lights To Center Q6.mp3" type="AudioStream" id=17]
+[ext_resource path="res://QuestionsNAnswers.gd" type="Script" id=18]
+[ext_resource path="res://OverviewTable.gd" type="Script" id=19]
+[ext_resource path="res://icon.png" type="Texture" id=20]
 
 [node name="Control" type="MarginContainer"]
 anchor_right = 0.997
@@ -24,10 +27,6 @@ anchor_bottom = 0.325
 margin_right = 0.0719604
 margin_bottom = -1.52588e-05
 script = ExtResource( 2 )
-
-[node name="QuestionManager" type="Node" parent="."]
-script = ExtResource( 6 )
-questions_file = "res://questions.json"
 
 [node name="MusicManager" type="Node" parent="."]
 script = ExtResource( 3 )
@@ -54,11 +53,13 @@ stream = ExtResource( 5 )
 [node name="MusicPlayer3" type="AudioStreamPlayer" parent="MusicManager"]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
 margin_right = 1020.0
 margin_bottom = 194.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource( 1 )
+script = ExtResource( 18 )
 
 [node name="TitleHbox" type="HBoxContainer" parent="VBoxContainer"]
 margin_right = 1020.0
@@ -87,15 +88,13 @@ size_flags_vertical = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/TitleHbox/PanelContainer/CenterContainer"]
 margin_left = 211.0
-margin_top = 39.0
+margin_top = 33.0
 margin_right = 711.0
-margin_bottom = 54.0
+margin_bottom = 59.0
 rect_min_size = Vector2( 500, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 bbcode_enabled = true
-bbcode_text = "[center]How can this be a question?[/center]"
-text = "How can this be a question?"
 fit_content_height = true
 scroll_active = false
 
@@ -127,6 +126,7 @@ theme = ExtResource( 1 )
 toggle_mode = true
 
 [node name="Margin" type="MarginContainer" parent="VBoxContainer/HBoxContainer/A"]
+visible = false
 anchor_left = 0.059
 anchor_right = 0.945
 anchor_bottom = 1.0
@@ -168,6 +168,7 @@ theme = ExtResource( 1 )
 toggle_mode = true
 
 [node name="Margin" type="MarginContainer" parent="VBoxContainer/HBoxContainer/B"]
+visible = false
 anchor_left = 0.059
 anchor_right = 0.945
 anchor_bottom = 1.0
@@ -220,6 +221,7 @@ theme = ExtResource( 1 )
 toggle_mode = true
 
 [node name="Margin" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/C"]
+visible = false
 anchor_left = 0.059
 anchor_right = 0.945
 anchor_bottom = 1.0
@@ -262,6 +264,7 @@ toggle_mode = true
 align = 0
 
 [node name="Margin" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/D"]
+visible = false
 anchor_left = 0.059
 anchor_right = 0.945
 anchor_bottom = 1.0
@@ -292,3 +295,50 @@ margin_left = 975.0
 margin_right = 1020.0
 margin_bottom = 47.0
 rect_min_size = Vector2( 45, 0 )
+
+[node name="QuestionManager" type="Node" parent="VBoxContainer"]
+script = ExtResource( 6 )
+questions_file = "res://questions.json"
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_left = 500.0
+margin_right = 1520.0
+margin_bottom = 194.0
+script = ExtResource( 19 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+visible = false
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1013.0
+margin_bottom = 187.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+margin_right = 1006.0
+margin_bottom = 64.0
+
+[node name="TextureButton" type="TextureButton" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture_normal = ExtResource( 20 )
+
+[node name="TextureButton2" type="TextureButton" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+margin_left = 68.0
+margin_right = 132.0
+margin_bottom = 64.0
+texture_normal = ExtResource( 20 )
+
+[node name="TextureButton3" type="TextureButton" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+margin_left = 136.0
+margin_right = 200.0
+margin_bottom = 64.0
+texture_normal = ExtResource( 20 )
+
+[node name="ItemList" type="ItemList" parent="PanelContainer/VBoxContainer"]
+margin_top = 68.0
+margin_right = 1006.0
+margin_bottom = 168.0
+rect_min_size = Vector2( 0, 100 )
+items = [ "Item 0", null, false, "Item 1", null, false, "Item 2", null, false, "Item 3", null, false ]
+
+[node name="Tween" type="Tween" parent="PanelContainer"]
