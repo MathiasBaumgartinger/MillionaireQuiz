@@ -49,7 +49,7 @@ func play(game_state: int, question_no: int):
 				final_answer_from6.loop = false
 				$MusicPlayer2.stream = final_answer_from6
 				$MusicPlayer2.playing = true
-		Game.GAME_STATE.corret:
+		Game.GAME_STATE.correct:
 			if question_no < 5:
 				$MusicPlayer2.stream = questions_1to4_win
 			elif question_no == 5:

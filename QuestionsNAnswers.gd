@@ -21,6 +21,7 @@ var current_question: Dictionary
 var locked_option: String
 var question_no: int
 var correct_option: String
+var game_state: int
 
 signal answered(is_correct)
 signal locked
@@ -31,8 +32,9 @@ func _ready():
 		button.connect("toggled", self, "_question_locked", [button])
 
 
-func on_game_state_changed(game_state: int):
-	match game_state:
+func on_game_state_changed(state: int):
+	game_state = state
+	match state:
 		Game.GAME_STATE.question:
 			reset_buttons()
 			setup_next_question()
@@ -45,10 +47,27 @@ func on_game_state_changed(game_state: int):
 			$HBoxContainer2/C/Margin.visible = true
 		Game.GAME_STATE.D:
 			$HBoxContainer2/D/Margin.visible = true
-			
+
+
+func on_fty_fty():
+	if game_state != Game.GAME_STATE.D: return
+	
+	var hidden_count = 0
+	while hidden_count < 2:
+		print ("randi() mod %d + %d" % [Game.GAME_STATE.D - Game.GAME_STATE.A + 1, Game.GAME_STATE.A])
+		var rand = randi() % (Game.GAME_STATE.D - Game.GAME_STATE.A + 1) + Game.GAME_STATE.A
+		
+		# We do not want to hide a correct option
+		if Game.GAME_STATE.keys()[rand] != correct_option:
+			hidden_count += 1
+			print(Game.GAME_STATE.keys()[rand])
+			buttons[Game.GAME_STATE.keys()[rand]].get_node("Margin").visible = false
+	
+	
 
 
 func animate(locked_button, stylebox):
+	# There is nicer ways - works for now
 	locked_button.theme.set_stylebox("normal", "Button", stylebox)
 	yield(get_tree().create_timer(0.4), "timeout")
 	locked_button.theme.set_stylebox("normal", "Button", normal_sb)
