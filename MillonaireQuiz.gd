@@ -11,7 +11,7 @@ enum GAME_STATE {
 	C,
 	D,
 	locked,
-	corret,
+	correct,
 	wrong
 }
 
@@ -29,24 +29,32 @@ func set_question_no(no: int):
 
 
 func set_game_state(state):
-	if(game_state == GAME_STATE.question): set_question_no(question_no + 1)
-	print("Setting game state: " + GAME_STATE.keys()[state])
+	if game_state == GAME_STATE.correct: set_question_no(question_no + 1)
+	#print("Setting game state: " + GAME_STATE.keys()[state])
 	emit_signal("game_state_changed", state)
 	$MusicManager.play(state, question_no)
 	game_state = state
 
 
 func _ready():
+	get_tree().get_root().connect("size_changed", self, "_adapt_font_size")
 	connect("game_state_changed", $VBoxContainer, "on_game_state_changed")
 	connect("check", $VBoxContainer, "check")
 	connect("game_state_changed", self, "_on_game_state_changed")
 	$VBoxContainer.connect("answered", self, "on_answered")
 	$VBoxContainer.connect("locked", self, "on_locked")
+	connect("question_no_changed", $Control/OverviewTable, "on_question_no_changed")
+	$Control/OverviewTable.connect("ftyfty", $VBoxContainer, "on_fty_fty")
 
 
 func _input(event):
 	if event.is_action_pressed("progress_state"):
 		progress()
+
+
+func _adapt_font_size():
+	var font: DynamicFont = preload("res://ThemeElements/TextWhite.tres")
+	font.size = int(get_viewport_rect().size.y * 0.025)
 
 
 func _on_game_state_changed(game_state: int):
@@ -63,13 +71,13 @@ func on_locked():
 
 
 func on_answered(is_correct):
-	set_game_state(GAME_STATE.corret) if is_correct else set_game_state(GAME_STATE.wrong)
+	set_game_state(GAME_STATE.correct) if is_correct else set_game_state(GAME_STATE.wrong)
 
 
 func progress():
 	print("Current state: " + GAME_STATE.keys()[game_state])
 	match game_state:
-		GAME_STATE.corret: 
+		GAME_STATE.correct: 
 			set_game_state(GAME_STATE.empty)
 		GAME_STATE.wrong: 
 			set_game_state(GAME_STATE.empty)
