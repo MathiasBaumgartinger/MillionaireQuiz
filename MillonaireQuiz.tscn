@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://MillonaireTheme.tres" type="Theme" id=1]
 [ext_resource path="res://MillonaireQuiz.gd" type="Script" id=2]
@@ -30,6 +30,12 @@
 [ext_resource path="res://Resoures/5050_disabled.png" type="Texture" id=28]
 [ext_resource path="res://Resoures/audience_disabled.png" type="Texture" id=29]
 [ext_resource path="res://Resoures/telephone_disabled.png" type="Texture" id=30]
+[ext_resource path="res://Resoures/Intro.webm" type="VideoStream" id=31]
+[ext_resource path="res://Resoures/Simon.jpeg" type="Texture" id=32]
+[ext_resource path="res://Resoures/Question 10.mp3" type="AudioStream" id=33]
+[ext_resource path="res://Resoures/million_win.mp3" type="AudioStream" id=34]
+[ext_resource path="res://Resoures/questions_11_win.mp3" type="AudioStream" id=35]
+[ext_resource path="res://Resoures/questions_from11_lose.mp3" type="AudioStream" id=36]
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.8, 0.737255, 0.0627451, 1 )
@@ -66,8 +72,12 @@ question_5_win = ExtResource( 14 )
 question_5_lose = ExtResource( 16 )
 question_from6_win = ExtResource( 10 )
 question_from6_lose = ExtResource( 11 )
+questions_from11 = ExtResource( 33 )
+questions_from11_win = ExtResource( 35 )
+questions_from11_lose = ExtResource( 36 )
 lights_to_center_1to5 = ExtResource( 8 )
 lights_to_center_from6 = ExtResource( 17 )
+question_millionaire_win = ExtResource( 34 )
 
 [node name="MusicPlayer1" type="AudioStreamPlayer" parent="MusicManager"]
 
@@ -243,7 +253,6 @@ theme = ExtResource( 1 )
 toggle_mode = true
 
 [node name="Margin" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/C"]
-visible = false
 anchor_left = 0.059
 anchor_right = 0.945
 anchor_bottom = 1.0
@@ -258,16 +267,14 @@ margin_right = 402.0
 margin_bottom = 47.0
 
 [node name="Q" type="Label" parent="VBoxContainer/HBoxContainer2/C/Margin/HBox"]
-margin_top = 16.0
-margin_right = 12.0
-margin_bottom = 30.0
-text = "C:"
+margin_top = 14.0
+margin_bottom = 32.0
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/C/Margin/HBox"]
-margin_left = 16.0
-margin_top = 16.0
-margin_right = 16.0
-margin_bottom = 30.0
+margin_left = 4.0
+margin_top = 14.0
+margin_right = 4.0
+margin_bottom = 32.0
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer/HBoxContainer2"]
 margin_left = 508.0
@@ -322,12 +329,14 @@ rect_min_size = Vector2( 45, 0 )
 script = ExtResource( 6 )
 questions_file = "res://questions.json"
 
-[node name="Control" type="Control" parent="."]
+[node name="Tween" type="Tween" parent="VBoxContainer"]
+
+[node name="Overview" type="Control" parent="."]
 margin_right = 1020.0
 margin_bottom = 198.0
 mouse_filter = 2
 
-[node name="OverviewTable" type="PanelContainer" parent="Control"]
+[node name="OverviewTable" type="PanelContainer" parent="Overview"]
 anchor_left = 0.76
 anchor_right = 1.004
 anchor_bottom = 3.005
@@ -340,20 +349,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/OverviewTable"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Overview/OverviewTable"]
 margin_left = 40.0
 margin_top = 20.0
 margin_right = 513.0
 margin_bottom = 684.0
 
-[node name="JokerContainer" type="HBoxContainer" parent="Control/OverviewTable/VBoxContainer"]
+[node name="JokerContainer" type="HBoxContainer" parent="Overview/OverviewTable/VBoxContainer"]
 margin_right = 473.0
 margin_bottom = 150.0
 rect_min_size = Vector2( 0, 150 )
 custom_constants/separation = 10
 alignment = 1
 
-[node name="FtyFtyButton" type="TextureButton" parent="Control/OverviewTable/VBoxContainer/JokerContainer"]
+[node name="FtyFtyButton" type="TextureButton" parent="Overview/OverviewTable/VBoxContainer/JokerContainer"]
 margin_top = 27.0
 margin_right = 151.0
 margin_bottom = 122.0
@@ -364,7 +373,7 @@ texture_normal = ExtResource( 22 )
 texture_pressed = ExtResource( 25 )
 texture_disabled = ExtResource( 28 )
 
-[node name="CallButton" type="TextureButton" parent="Control/OverviewTable/VBoxContainer/JokerContainer"]
+[node name="CallButton" type="TextureButton" parent="Overview/OverviewTable/VBoxContainer/JokerContainer"]
 margin_left = 161.0
 margin_top = 27.0
 margin_right = 312.0
@@ -375,7 +384,7 @@ texture_normal = ExtResource( 20 )
 texture_pressed = ExtResource( 26 )
 texture_disabled = ExtResource( 30 )
 
-[node name="AudienceButton" type="TextureButton" parent="Control/OverviewTable/VBoxContainer/JokerContainer"]
+[node name="AudienceButton" type="TextureButton" parent="Overview/OverviewTable/VBoxContainer/JokerContainer"]
 margin_left = 322.0
 margin_top = 27.0
 margin_right = 473.0
@@ -386,7 +395,7 @@ texture_normal = ExtResource( 21 )
 texture_pressed = ExtResource( 27 )
 texture_disabled = ExtResource( 29 )
 
-[node name="ItemList" type="ItemList" parent="Control/OverviewTable/VBoxContainer"]
+[node name="ItemList" type="ItemList" parent="Overview/OverviewTable/VBoxContainer"]
 margin_top = 154.0
 margin_right = 473.0
 margin_bottom = 664.0
@@ -398,7 +407,49 @@ custom_fonts/font = ExtResource( 24 )
 custom_styles/selected_focus = SubResource( 3 )
 custom_styles/selected = SubResource( 3 )
 custom_styles/bg = SubResource( 2 )
-items = [ "15   3xSchnaps", null, false, "14   2xSchnaps", null, false, "13   2xSchnaps", null, false, "12   1xSchnaps", null, false, "11   1xSchnaps", null, false, "10   5xBier", null, false, "  9   4xBier", null, false, "  8   3xBier", null, false, "  7   2xBier", null, false, "  6   1xBier", null, false, "  5   5xWasser ", null, false, "  4   4xWasser", null, false, "  3   3xWasser", null, false, "  2   2xWasser", null, false, "  1   1xWasser", null, false ]
+items = [ "15   3xSchnaps", null, false, "14   2xSchnaps", null, false, "13   1xSchnaps", null, false, "12   1xSchnaps", null, false, "11   1xSchnaps", null, false, "10   5xWein", null, false, "  9   4xWein", null, false, "  8   3xWein", null, false, "  7   2xWein", null, false, "  6   1xWein", null, false, "  5   5xBier", null, false, "  4   4xBier", null, false, "  3   3xBier", null, false, "  2   2xBier", null, false, "  1   1xBier", null, false ]
 auto_height = true
 
-[node name="Tween" type="Tween" parent="Control/OverviewTable"]
+[node name="Tween" type="Tween" parent="Overview/OverviewTable"]
+
+[node name="Intro" type="Control" parent="."]
+visible = false
+margin_right = 1020.0
+margin_bottom = 198.0
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Intro"]
+anchor_right = 1.007
+anchor_bottom = 3.03
+margin_left = -467.0
+margin_top = -30.0
+margin_right = 105.86
+margin_bottom = 107.06
+texture = ExtResource( 32 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Intro"]
+anchor_right = 1.003
+anchor_bottom = 3.025
+margin_right = -0.0599976
+margin_bottom = 0.0499878
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VideoPlayer" type="VideoPlayer" parent="Intro"]
+anchor_right = 1.005
+anchor_bottom = 3.03
+margin_right = -0.0401001
+margin_bottom = 0.0599365
+stream = ExtResource( 31 )
+volume_db = -80.0
+buffering_msec = 100
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="Intro"]

@@ -62,8 +62,6 @@ func on_fty_fty():
 			hidden_count += 1
 			print(Game.GAME_STATE.keys()[rand])
 			buttons[Game.GAME_STATE.keys()[rand]].get_node("Margin").visible = false
-	
-	
 
 
 func animate(locked_button, stylebox):
@@ -114,7 +112,7 @@ func check():
 	else: 
 		emit_signal("answered", false)
 		animate(locked_button,
-			load("res://ThemeElements/TemplateWrong.tres").duplicate()) 
+			load("res://ThemeElements/TemplateWrong.tres").duplicate())
 
 
 func _question_locked(presssed: bool, button: Button):

@@ -13,8 +13,12 @@ export var question_5_win: AudioStream
 export var question_5_lose: AudioStream
 export var question_from6_win: AudioStream
 export var question_from6_lose: AudioStream
+export var questions_from11: AudioStream
+export var questions_from11_win: AudioStream
+export var questions_from11_lose: AudioStream
 export var lights_to_center_1to5: AudioStream
 export var lights_to_center_from6: AudioStream
+export var question_millionaire_win: AudioStream
 
 
 func play(game_state: int, question_no: int):
@@ -35,13 +39,14 @@ func play(game_state: int, question_no: int):
 			elif question_no > 6:
 				$MusicPlayer2.stream = lights_to_center_from6
 				$MusicPlayer2.stream.loop = false
-				$MusicPlayer2.playing = true
-				
+				$MusicPlayer2.playing = true				
 			if question_no <= 5:
 				if $MusicPlayer1.playing: return
 				$MusicPlayer1.stream = questions_1to5
-			elif question_no > 5:
+			elif question_no <= 10:
 				$MusicPlayer1.stream = questions_from6
+			else:
+				$MusicPlayer1.stream = questions_from11
 			$MusicPlayer1.playing = true
 		Game.GAME_STATE.locked:
 			if question_no > 5:
@@ -52,8 +57,11 @@ func play(game_state: int, question_no: int):
 		Game.GAME_STATE.correct:
 			if question_no < 5:
 				$MusicPlayer2.stream = questions_1to4_win
-			elif question_no == 5:
+			elif question_no == 5 or question_no == 10:
 				$MusicPlayer2.stream = question_5_win
+				$MusicPlayer1.playing = false
+			elif question_no == 15:
+				$MusicPlayer2.stream = question_millionaire_win
 			else:
 				$MusicPlayer2.stream = question_from6_win
 			$MusicPlayer2.stream.loop = false

@@ -1,69 +1,139 @@
 {
     "questions": [
         {
-            "question": "Who served as finance minister during the reign of Louis XIV also known as the sun king?",
-            "A": "Jean-Baptist Colbert",
-            "B": "Jean-Jacques Rosseault",
-            "C": "Jean-Baptist Grange",
-            "D": "Marie Curie",
-            "correct": "A"
+            "score": "easy",
+            "question": "Welche Bundesländer gehören zum sogenannten Austrian automotive triangle?",
+            "A": "Oberösterreich, Niederösterreich, Wien",
+            "B": "Wien, Oberösterreich, Steiermark",
+            "C": "Niederösterreich, Wien, Steiermark",
+            "D": "Burgenland, Wien, Salzburg",
+            "correct": "B"
         },
         {
-            "question": "Who has most time played on PUBG of all the present people?",
+            "score": "easy",
+            "question": "Wer hat die meiste Zeit das Computerspiel PUBG gespielt?",
             "A": "Mathias Baumgartinger",
             "B": "Simon Baumgartinger",
             "C": "Robert Prötsch",
-            "D": "Sebastian Humer",
+            "D": "Tobias Birklhuber",
             "correct": "A"
         },
         {
-            "question": "Is this a dummy question?",
-            "A": "Yes",
-            "B": "No",
-            "C": "Maybe",
-            "D": "I do not know",
+            "score": "easy",
+            "question": "Wie heißt der Vater von Prinz Anduin im Computerspiel WoW?",
+            "A": "Genn Greymane",
+            "B": "Arthas Menethil",
+            "C": "Varian Wrynn",
+            "D": "Illidan Stormrage",
+            "correct": "C"
+        },
+        {
+            "score": "easy",
+            "question": "Was war mit drei Jahren deine Lieblingsbeschäftigung?",
+            "A": "Nasenbohren",
+            "B": "Mit dem Güllewagen fahren",
+            "C": "Sandburgen bauen",
+            "D": "Puppen spielen",
+            "correct": "B"
+        },
+        {
+            "score": "easy",
+            "question": "Wer diente unter Ludwig XIV. als Finanzminister?",
+            "A": "Jean-Baptist Colbert",
+            "B": "Jean-Jacques Monnoyer",
+            "C": "Jules Mazarin",
+            "D": "François de Louvois",
+            "correct": "A"
+        },
+        {
+            "score": "medium",
+            "question": "Was benötigt man zur Gründung einer neuen Partei?",
+            "A": "Eine Bestätigung über die finanziellen Mittel",
+            "B": "Eine österreichische Staatsbürgerschaft",
+            "C": "Niedergeschriebene Rechten und Pflichten der Mitglieder",
+            "D": "Einen eigenständigen und eindeutigen Namen der Partei",
+            "correct": "C"
+        },
+        {
+            "score": "medium",
+            "question": "Wie heißt das Zugband für den Dirndlrock?",
+            "A": "Gretel",
+            "B": "Hansel",
+            "C": "Bortel",
+            "D": "Bertel",
+            "correct": "B"
+        },
+        {
+            "score": "medium",
+            "question": "Du hast Magdalena Spießberger im Jahr 2011 die Frage 'Wozu hat man freunde?' gestellt. Was war ihre Antwort?",
+            "A": "zum bier dringa.",
+            "B": "zum schmauln.",
+            "C": "zum bier bringa.",
+            "D": "braucht kana.",
+            "correct": "C"
+        },
+        {
+            "score": "medium",
+            "question": "Was heißt „Ich habe Durst“ auf Französisch?",
+            "A": "J'ai soif",
+            "B": "j'ai faim",
+            "C": "J'ai la diarrhée",
+            "D": "J'ai bois",
+            "correct": "A"
+        },
+        {
+            "score": "medium",
+            "question": "Wie lautet der Name Evas älteste Cousine?",
+            "A": "Lucia",
+            "B": "Verena",
+            "C": "Lisa",
+            "D": "Berta",
+            "correct": "B"
+        },
+        {
+            "score": "hard",
+            "question": "Seit wann gibt es die Vereinigung der Wiener Linien?",
+            "A": "1903",
+            "B": "1948",
+            "C": "1992",
+            "D": "2018",
+            "correct": "C"
+        },
+        {
+            "score": "hard",
+            "question": "Ist diese Frage eine dumme Frage?",
+            "A": "Ja",
+            "B": "Nein",
+            "C": "Vielleicht",
+            "D": "Ich weiß nicht",
+            "correct": "F"
+        },
+        {
+            "score": "hard",
+            "question": "Wo war das alte Chelsea?",
+            "A": "Pfeilgasse",
+            "B": "Lange Gasse",
+            "C": "Piaristengasse",
+            "D": "Florianigasse",
+            "correct": "C"
+        },
+        {
+            "score": "hard",
+            "question": "Welchen Namen trägt das Gut Ulrichsberg 2?",
+            "A": "Ablinger Gut",
+            "B": "Niederhofer Gut",
+            "C": "Lacher Gut",
+            "D": "Kirchberger Gut",
             "correct": "D"
         },
         {
-            "question": "Is this a dummy question?",
-            "A": "Yes",
-            "B": "No",
-            "C": "Maybe",
-            "D": "I do not know",
-            "correct": "D"
-        },
-        {
-            "question": "Is this a dummy question?",
-            "A": "Yes",
-            "B": "No",
-            "C": "Maybe",
-            "D": "I do not know",
-            "correct": "D"
-        },
-        {
-            "question": "Is this a dummy question?",
-            "A": "Yes",
-            "B": "No",
-            "C": "Maybe",
-            "D": "I do not know",
-            "correct": "D"
-        },
-        {
-            "question": "Is this a dummy question?",
-            "A": "Yes",
-            "B": "No",
-            "C": "Maybe",
-            "D": "I do not know",
-            "correct": "D"
-        },
-        {
-            "question": "Is this a dummy question?",
-            "A": "Yes",
-            "B": "No",
-            "C": "Maybe",
-            "D": "I do not know",
-            "correct": "D"
+            "score": "hard",
+            "question": "Bei welcher der folgenden Begriffe handelt es sich um eine bekannte Weinregion in Süd Québec (Kanada)?",
+            "A": "Montérégie",
+            "B": "Douro",
+            "C": "Beaujolais",
+            "D": "Languedoc-Roussillon",
+            "correct": "A"
         }
-
     ]
 }

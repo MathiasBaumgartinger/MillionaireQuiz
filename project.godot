@@ -24,6 +24,10 @@ config/name="MillonairQuz"
 run/main_scene="res://MillonaireQuiz.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/fullscreen=true
+
 [input]
 
 ui_focus_next={
