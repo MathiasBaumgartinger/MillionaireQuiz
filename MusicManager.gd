@@ -1,25 +1,34 @@
 extends Node
 
 
-export var opening: AudioStream
-export var lets_play: AudioStream
-export var lights_to_center: AudioStream
-export var questions_1to5: AudioStream
-export var questions_from6: AudioStream
-export var final_answer_from6: AudioStream
-export var questions_1to4_win: AudioStream
-export var questions_1to4_lose: AudioStream
-export var question_5_win: AudioStream
-export var question_5_lose: AudioStream
-export var question_from6_win: AudioStream
-export var question_from6_lose: AudioStream
-export var questions_from11: AudioStream
-export var questions_from11_win: AudioStream
-export var questions_from11_lose: AudioStream
-export var lights_to_center_1to5: AudioStream
-export var lights_to_center_from6: AudioStream
-export var question_millionaire_win: AudioStream
+@export var opening: AudioStream
+@export var lets_play: AudioStream
+@export var lights_to_center: AudioStream
+@export var questions_1to5: AudioStream
+@export var questions_from6: AudioStream
+@export var final_answer_from6: AudioStream
+@export var questions_1to4_win: AudioStream
+@export var questions_1to4_lose: AudioStream
+@export var question_5_win: AudioStream
+@export var question_5_lose: AudioStream
+@export var question_from6_win: AudioStream
+@export var question_from6_lose: AudioStream
+@export var questions_from11: AudioStream
+@export var questions_from11_win: AudioStream
+@export var questions_from11_lose: AudioStream
+@export var lights_to_center_1to5: AudioStream
+@export var lights_to_center_from6: AudioStream
+@export var question_millionaire_win: AudioStream
 
+@export var phone_a_friend: AudioStream
+@export var ask_audience: AudioStream
+@export var fty_fty: AudioStream
+
+enum JOKER {
+	phone,
+	audience,
+	fty_fty
+}
 
 func play(game_state: int, question_no: int):
 	match game_state:
@@ -76,3 +85,12 @@ func play(game_state: int, question_no: int):
 			$MusicPlayer2.stream.loop = false
 			$MusicPlayer2.playing = true
 		_: return
+
+
+func on_fty_fty():
+	#$MusicPlayer1.playing = false
+	$JokerPlayer.stream = fty_fty
+	$JokerPlayer.stream.loop = false
+	$JokerPlayer.play()
+	#yield($JokerPlayer, "finished")
+	#$MusicPlayer1.play()

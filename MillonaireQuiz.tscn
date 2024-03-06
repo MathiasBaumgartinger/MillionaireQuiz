@@ -1,455 +1,190 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=29 format=3 uid="uid://dqc7haas1gay5"]
 
-[ext_resource path="res://MillonaireTheme.tres" type="Theme" id=1]
-[ext_resource path="res://MillonaireQuiz.gd" type="Script" id=2]
-[ext_resource path="res://MusicManager.gd" type="Script" id=3]
-[ext_resource path="res://Resoures/Opening.mp3" type="AudioStream" id=4]
-[ext_resource path="res://Resoures/Lets Play.mp3" type="AudioStream" id=5]
-[ext_resource path="res://QuestionManager.gd" type="Script" id=6]
-[ext_resource path="res://Resoures/Question 6.mp3" type="AudioStream" id=7]
-[ext_resource path="res://Resoures/Lights To Center Q1Q5.mp3" type="AudioStream" id=8]
-[ext_resource path="res://Resoures/Questions 14 Lose.mp3" type="AudioStream" id=9]
-[ext_resource path="res://Resoures/Question 6 Win.mp3" type="AudioStream" id=10]
-[ext_resource path="res://Resoures/Question 6 Lose.mp3" type="AudioStream" id=11]
-[ext_resource path="res://Resoures/Questions 14 Win.mp3" type="AudioStream" id=12]
-[ext_resource path="res://Resoures/Questions 15.mp3" type="AudioStream" id=13]
-[ext_resource path="res://Resoures/Question 5 Win.mp3" type="AudioStream" id=14]
-[ext_resource path="res://Resoures/Question 6 Final Answer.mp3" type="AudioStream" id=15]
-[ext_resource path="res://Resoures/Question 5 Lose.mp3" type="AudioStream" id=16]
-[ext_resource path="res://Resoures/Lights To Center Q6.mp3" type="AudioStream" id=17]
-[ext_resource path="res://QuestionsNAnswers.gd" type="Script" id=18]
-[ext_resource path="res://OverviewTable.gd" type="Script" id=19]
-[ext_resource path="res://Resoures/telephone.png" type="Texture" id=20]
-[ext_resource path="res://Resoures/ask_audience.png" type="Texture" id=21]
-[ext_resource path="res://Resoures/5050.png" type="Texture" id=22]
-[ext_resource path="res://ThemeElements/OverviewStylebox.tres" type="StyleBox" id=23]
-[ext_resource path="res://ThemeElements/TextWhite.tres" type="DynamicFont" id=24]
-[ext_resource path="res://Resoures/5050_pressed.png" type="Texture" id=25]
-[ext_resource path="res://Resoures/telephone_pressed.png" type="Texture" id=26]
-[ext_resource path="res://Resoures/audience_pressed.png" type="Texture" id=27]
-[ext_resource path="res://Resoures/5050_disabled.png" type="Texture" id=28]
-[ext_resource path="res://Resoures/audience_disabled.png" type="Texture" id=29]
-[ext_resource path="res://Resoures/telephone_disabled.png" type="Texture" id=30]
-[ext_resource path="res://Resoures/Intro.webm" type="VideoStream" id=31]
-[ext_resource path="res://Resoures/Simon.jpeg" type="Texture" id=32]
-[ext_resource path="res://Resoures/Question 10.mp3" type="AudioStream" id=33]
-[ext_resource path="res://Resoures/million_win.mp3" type="AudioStream" id=34]
-[ext_resource path="res://Resoures/questions_11_win.mp3" type="AudioStream" id=35]
-[ext_resource path="res://Resoures/questions_from11_lose.mp3" type="AudioStream" id=36]
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.8, 0.737255, 0.0627451, 1 )
-shadow_color = Color( 0, 0, 0, 0.882353 )
-shadow_size = 5
-shadow_offset = Vector2( 2, 2 )
-
-[sub_resource type="StyleBoxEmpty" id=2]
+[ext_resource type="Theme" uid="uid://cwb5cke0u6bsl" path="res://MillonaireTheme.tres" id="1"]
+[ext_resource type="Script" path="res://MillonaireQuiz.gd" id="2"]
+[ext_resource type="Script" path="res://MusicManager.gd" id="3"]
+[ext_resource type="AudioStream" uid="uid://sad8kjb0fbyf" path="res://Resoures/Opening.mp3" id="4"]
+[ext_resource type="AudioStream" uid="uid://brckq82dpa1il" path="res://Resoures/Lets Play.mp3" id="5"]
+[ext_resource type="Script" path="res://QuestionManager.gd" id="6"]
+[ext_resource type="AudioStream" uid="uid://m0uar2861iw4" path="res://Resoures/Question 6.mp3" id="7"]
+[ext_resource type="AudioStream" uid="uid://bwndeqi1qdt1g" path="res://Resoures/Lights To Center Q1Q5.mp3" id="8"]
+[ext_resource type="AudioStream" uid="uid://bim4p8xmactja" path="res://Resoures/Questions 14 Lose.mp3" id="9"]
+[ext_resource type="AudioStream" uid="uid://bpd4bp0v8m0ms" path="res://Resoures/Question 6 Win.mp3" id="10"]
+[ext_resource type="AudioStream" uid="uid://bi6pv8l73qhj8" path="res://Resoures/Question 6 Lose.mp3" id="11"]
+[ext_resource type="AudioStream" uid="uid://uen7l2n2t0yy" path="res://Resoures/Questions 14 Win.mp3" id="12"]
+[ext_resource type="AudioStream" uid="uid://cjwv07041indi" path="res://Resoures/Questions 15.mp3" id="13"]
+[ext_resource type="AudioStream" uid="uid://c735rs8vxjmo4" path="res://Resoures/Question 5 Win.mp3" id="14"]
+[ext_resource type="AudioStream" uid="uid://cy8off5hqwsux" path="res://Resoures/Question 6 Final Answer.mp3" id="15"]
+[ext_resource type="AudioStream" uid="uid://0f1gbihqfful" path="res://Resoures/Question 5 Lose.mp3" id="16"]
+[ext_resource type="AudioStream" uid="uid://o65x82utvtcf" path="res://Resoures/Lights To Center Q6.mp3" id="17"]
+[ext_resource type="Script" path="res://QuestionsNAnswers.gd" id="18"]
+[ext_resource type="PackedScene" uid="uid://5pcyyn0mmh7p" path="res://AnswerButton.tscn" id="23_nrhp2"]
+[ext_resource type="Script" path="res://Intro.gd" id="25_3lhe5"]
+[ext_resource type="PackedScene" uid="uid://dns40dwgkxfh6" path="res://OverviewTable.tscn" id="25_4ukqn"]
+[ext_resource type="StyleBox" path="res://ThemeElements/OverviewStylebox.tres" id="26_op65b"]
+[ext_resource type="AudioStream" uid="uid://cdrodfqijruub" path="res://Resoures/Question 10.mp3" id="33"]
+[ext_resource type="AudioStream" uid="uid://rj0j8fnatcjt" path="res://Resoures/million_win.mp3" id="34"]
+[ext_resource type="AudioStream" uid="uid://cyfyfq33031br" path="res://Resoures/questions_11_win.mp3" id="35"]
+[ext_resource type="VideoStream" path="res://Resoures/Intr.ogv" id="35_2gbe2"]
+[ext_resource type="AudioStream" uid="uid://57g0y7trjxjv" path="res://Resoures/questions_from11_lose.mp3" id="36"]
+[ext_resource type="AudioStream" uid="uid://cnfgeiirbsff6" path="res://Resoures/5050.mp3" id="37"]
 
 [node name="Control" type="MarginContainer"]
+anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.332
-margin_right = -4.0
-margin_bottom = -0.200012
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 1 )
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+theme = ExtResource("1")
+script = ExtResource("2")
 
 [node name="MusicManager" type="Node" parent="."]
-script = ExtResource( 3 )
-opening = ExtResource( 4 )
-lets_play = ExtResource( 5 )
-lights_to_center = ExtResource( 8 )
-questions_1to5 = ExtResource( 13 )
-questions_from6 = ExtResource( 7 )
-final_answer_from6 = ExtResource( 15 )
-questions_1to4_win = ExtResource( 12 )
-questions_1to4_lose = ExtResource( 9 )
-question_5_win = ExtResource( 14 )
-question_5_lose = ExtResource( 16 )
-question_from6_win = ExtResource( 10 )
-question_from6_lose = ExtResource( 11 )
-questions_from11 = ExtResource( 33 )
-questions_from11_win = ExtResource( 35 )
-questions_from11_lose = ExtResource( 36 )
-lights_to_center_1to5 = ExtResource( 8 )
-lights_to_center_from6 = ExtResource( 17 )
-question_millionaire_win = ExtResource( 34 )
+script = ExtResource("3")
+opening = ExtResource("4")
+lets_play = ExtResource("5")
+lights_to_center = ExtResource("8")
+questions_1to5 = ExtResource("13")
+questions_from6 = ExtResource("7")
+final_answer_from6 = ExtResource("15")
+questions_1to4_win = ExtResource("12")
+questions_1to4_lose = ExtResource("9")
+question_5_win = ExtResource("14")
+question_5_lose = ExtResource("16")
+question_from6_win = ExtResource("10")
+question_from6_lose = ExtResource("11")
+questions_from11 = ExtResource("33")
+questions_from11_win = ExtResource("35")
+questions_from11_lose = ExtResource("36")
+lights_to_center_1to5 = ExtResource("8")
+lights_to_center_from6 = ExtResource("17")
+question_millionaire_win = ExtResource("34")
+fty_fty = ExtResource("37")
 
 [node name="MusicPlayer1" type="AudioStreamPlayer" parent="MusicManager"]
 
 [node name="MusicPlayer2" type="AudioStreamPlayer" parent="MusicManager"]
-stream = ExtResource( 5 )
+stream = ExtResource("5")
 
 [node name="MusicPlayer3" type="AudioStreamPlayer" parent="MusicManager"]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_right = 1020.0
-margin_bottom = 198.0
+[node name="JokerPlayer" type="AudioStreamPlayer" parent="MusicManager"]
+
+[node name="QuestionsNAnswers" type="VBoxContainer" parent="." node_paths=PackedStringArray("button_a", "button_b", "button_c", "button_d")]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 18 )
+script = ExtResource("18")
+button_a = NodePath("HBoxAnB/A")
+button_b = NodePath("HBoxAnB/B")
+button_c = NodePath("HBoxCnD/C")
+button_d = NodePath("HBoxCnD/D")
 
-[node name="TitleHbox" type="HBoxContainer" parent="VBoxContainer"]
-margin_right = 1020.0
-margin_bottom = 95.0
+[node name="TitleHbox" type="HBoxContainer" parent="QuestionsNAnswers"]
+layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 
-[node name="BeginSeperator2" type="HSeparator" parent="VBoxContainer/TitleHbox"]
-margin_right = 45.0
-margin_bottom = 95.0
-rect_min_size = Vector2( 45, 0 )
+[node name="BeginSeperator2" type="HSeparator" parent="QuestionsNAnswers/TitleHbox"]
+layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/TitleHbox"]
-margin_left = 49.0
-margin_right = 971.0
-margin_bottom = 95.0
-rect_min_size = Vector2( 0, 50 )
+[node name="PanelContainer" type="PanelContainer" parent="QuestionsNAnswers/TitleHbox"]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/TitleHbox/PanelContainer"]
-margin_right = 922.0
-margin_bottom = 95.0
+[node name="CenterContainer" type="CenterContainer" parent="QuestionsNAnswers/TitleHbox/PanelContainer"]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/TitleHbox/PanelContainer/CenterContainer"]
-margin_left = 61.0
-margin_top = 38.0
-margin_right = 861.0
-margin_bottom = 57.0
-rect_min_size = Vector2( 800, 0 )
+[node name="RichTextLabel" type="RichTextLabel" parent="QuestionsNAnswers/TitleHbox/PanelContainer/CenterContainer"]
+clip_contents = false
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 bbcode_enabled = true
-fit_content_height = true
+fit_content = true
 scroll_active = false
+autowrap_mode = 0
 
-[node name="EndSeperator2" type="HSeparator" parent="VBoxContainer/TitleHbox"]
+[node name="EndSeperator2" type="HSeparator" parent="QuestionsNAnswers/TitleHbox"]
 show_behind_parent = true
-margin_left = 975.0
-margin_right = 1020.0
-margin_bottom = 95.0
-rect_min_size = Vector2( 45, 0 )
+layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 99.0
-margin_right = 1020.0
-margin_bottom = 146.0
+[node name="HBoxAnB" type="HBoxContainer" parent="QuestionsNAnswers"]
+layout_mode = 2
 size_flags_vertical = 3
 
-[node name="BeginSeperator" type="HSeparator" parent="VBoxContainer/HBoxContainer"]
-margin_right = 45.0
-margin_bottom = 47.0
-rect_min_size = Vector2( 45, 0 )
+[node name="BeginSeperator" type="HSeparator" parent="QuestionsNAnswers/HBoxAnB"]
+layout_mode = 2
 
-[node name="A" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 49.0
-margin_right = 504.0
-margin_bottom = 47.0
-rect_min_size = Vector2( 0, 25 )
-size_flags_horizontal = 3
-theme = ExtResource( 1 )
-toggle_mode = true
+[node name="A" parent="QuestionsNAnswers/HBoxAnB" instance=ExtResource("23_nrhp2")]
+layout_mode = 2
+label = "A:"
 
-[node name="Margin" type="MarginContainer" parent="VBoxContainer/HBoxContainer/A"]
-visible = false
-anchor_left = 0.059
-anchor_right = 0.945
-anchor_bottom = 1.0
-margin_left = 0.154999
-margin_top = 1.0
-margin_right = 0.0509644
-margin_bottom = 0.920002
-mouse_filter = 2
+[node name="HSeparator" type="HSeparator" parent="QuestionsNAnswers/HBoxAnB"]
+layout_mode = 2
 
-[node name="HBox" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/A/Margin"]
-margin_right = 403.0
-margin_bottom = 46.0
+[node name="B" parent="QuestionsNAnswers/HBoxAnB" instance=ExtResource("23_nrhp2")]
+layout_mode = 2
+label = "B:"
 
-[node name="Q" type="Label" parent="VBoxContainer/HBoxContainer/A/Margin/HBox"]
-margin_top = 15.0
-margin_right = 13.0
-margin_bottom = 29.0
-text = "A:"
+[node name="EndSeperator" type="HSeparator" parent="QuestionsNAnswers/HBoxAnB"]
+layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/A/Margin/HBox"]
-margin_left = 17.0
-margin_top = 15.0
-margin_right = 17.0
-margin_bottom = 29.0
-
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer/HBoxContainer"]
-margin_left = 508.0
-margin_right = 511.0
-margin_bottom = 47.0
-rect_min_size = Vector2( 1, 0 )
-
-[node name="B" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_left = 515.0
-margin_right = 971.0
-margin_bottom = 47.0
-rect_min_size = Vector2( 0, 25 )
-size_flags_horizontal = 3
-theme = ExtResource( 1 )
-toggle_mode = true
-
-[node name="Margin" type="MarginContainer" parent="VBoxContainer/HBoxContainer/B"]
-visible = false
-anchor_left = 0.059
-anchor_right = 0.945
-anchor_bottom = 1.0
-margin_left = 0.0959988
-margin_top = -0.0120001
-margin_right = -0.00802612
-margin_bottom = -0.0919991
-mouse_filter = 2
-
-[node name="HBox" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/B/Margin"]
-margin_right = 403.0
-margin_bottom = 46.0
-
-[node name="Q" type="Label" parent="VBoxContainer/HBoxContainer/B/Margin/HBox"]
-margin_top = 15.0
-margin_right = 13.0
-margin_bottom = 29.0
-text = "B:"
-
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/B/Margin/HBox"]
-margin_left = 17.0
-margin_top = 15.0
-margin_right = 17.0
-margin_bottom = 29.0
-
-[node name="EndSeperator" type="HSeparator" parent="VBoxContainer/HBoxContainer"]
-margin_left = 975.0
-margin_right = 1020.0
-margin_bottom = 47.0
-rect_min_size = Vector2( 45, 0 )
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 150.0
-margin_right = 1020.0
-margin_bottom = 198.0
+[node name="HBoxCnD" type="HBoxContainer" parent="QuestionsNAnswers"]
+layout_mode = 2
 size_flags_vertical = 3
 
-[node name="BeginSeperator" type="HSeparator" parent="VBoxContainer/HBoxContainer2"]
-margin_right = 45.0
-margin_bottom = 48.0
-rect_min_size = Vector2( 45, 0 )
+[node name="BeginSeperator" type="HSeparator" parent="QuestionsNAnswers/HBoxCnD"]
+layout_mode = 2
 
-[node name="C" type="Button" parent="VBoxContainer/HBoxContainer2"]
-margin_left = 49.0
-margin_right = 504.0
-margin_bottom = 48.0
-rect_min_size = Vector2( 0, 25 )
-size_flags_horizontal = 3
-theme = ExtResource( 1 )
-toggle_mode = true
+[node name="C" parent="QuestionsNAnswers/HBoxCnD" instance=ExtResource("23_nrhp2")]
+layout_mode = 2
+label = "C:"
 
-[node name="Margin" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/C"]
-anchor_left = 0.059
-anchor_right = 0.945
-anchor_bottom = 1.0
-margin_left = 0.155001
-margin_top = -0.128
-margin_right = 0.0249634
-margin_bottom = -0.153999
-mouse_filter = 2
+[node name="HSeparator" type="HSeparator" parent="QuestionsNAnswers/HBoxCnD"]
+layout_mode = 2
 
-[node name="HBox" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2/C/Margin"]
-margin_right = 402.0
-margin_bottom = 47.0
+[node name="D" parent="QuestionsNAnswers/HBoxCnD" instance=ExtResource("23_nrhp2")]
+layout_mode = 2
+label = "D:"
 
-[node name="Q" type="Label" parent="VBoxContainer/HBoxContainer2/C/Margin/HBox"]
-margin_top = 14.0
-margin_bottom = 32.0
+[node name="EndSeperator" type="HSeparator" parent="QuestionsNAnswers/HBoxCnD"]
+layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/C/Margin/HBox"]
-margin_left = 4.0
-margin_top = 14.0
-margin_right = 4.0
-margin_bottom = 32.0
-
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer/HBoxContainer2"]
-margin_left = 508.0
-margin_right = 511.0
-margin_bottom = 48.0
-rect_min_size = Vector2( 1, 0 )
-
-[node name="D" type="Button" parent="VBoxContainer/HBoxContainer2"]
-margin_left = 515.0
-margin_right = 971.0
-margin_bottom = 48.0
-rect_min_size = Vector2( 0, 25 )
-size_flags_horizontal = 3
-theme = ExtResource( 1 )
-toggle_mode = true
-align = 0
-
-[node name="Margin" type="MarginContainer" parent="VBoxContainer/HBoxContainer2/D"]
-visible = false
-anchor_left = 0.059
-anchor_right = 0.945
-anchor_bottom = 1.0
-margin_left = 0.0960007
-margin_top = 1.0
-margin_right = -0.0340271
-margin_bottom = 0.973999
-mouse_filter = 2
-
-[node name="HBox" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2/D/Margin"]
-margin_right = 403.0
-margin_bottom = 47.0
-
-[node name="Q" type="Label" parent="VBoxContainer/HBoxContainer2/D/Margin/HBox"]
-margin_top = 16.0
-margin_right = 14.0
-margin_bottom = 30.0
-text = "D:"
-
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/D/Margin/HBox"]
-margin_left = 18.0
-margin_top = 16.0
-margin_right = 18.0
-margin_bottom = 30.0
-
-[node name="EndSeperator" type="HSeparator" parent="VBoxContainer/HBoxContainer2"]
-margin_left = 975.0
-margin_right = 1020.0
-margin_bottom = 48.0
-rect_min_size = Vector2( 45, 0 )
-
-[node name="QuestionManager" type="Node" parent="VBoxContainer"]
-script = ExtResource( 6 )
+[node name="QuestionManager" type="Node" parent="QuestionsNAnswers"]
+script = ExtResource("6")
 questions_file = "res://questions.json"
 
-[node name="Tween" type="Tween" parent="VBoxContainer"]
-
 [node name="Overview" type="Control" parent="."]
-margin_right = 1020.0
-margin_bottom = 198.0
+layout_mode = 2
 mouse_filter = 2
 
-[node name="OverviewTable" type="PanelContainer" parent="Overview"]
-anchor_left = 0.76
-anchor_right = 1.004
-anchor_bottom = 3.005
-margin_left = -0.200073
-margin_right = 200.0
-margin_bottom = 0.00500488
-custom_styles/panel = ExtResource( 23 )
-script = ExtResource( 19 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Overview/OverviewTable"]
-margin_left = 40.0
-margin_top = 20.0
-margin_right = 513.0
-margin_bottom = 684.0
-
-[node name="JokerContainer" type="HBoxContainer" parent="Overview/OverviewTable/VBoxContainer"]
-margin_right = 473.0
-margin_bottom = 150.0
-rect_min_size = Vector2( 0, 150 )
-custom_constants/separation = 10
-alignment = 1
-
-[node name="FtyFtyButton" type="TextureButton" parent="Overview/OverviewTable/VBoxContainer/JokerContainer"]
-margin_top = 27.0
-margin_right = 151.0
-margin_bottom = 122.0
-focus_mode = 1
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource( 22 )
-texture_pressed = ExtResource( 25 )
-texture_disabled = ExtResource( 28 )
-
-[node name="CallButton" type="TextureButton" parent="Overview/OverviewTable/VBoxContainer/JokerContainer"]
-margin_left = 161.0
-margin_top = 27.0
-margin_right = 312.0
-margin_bottom = 122.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource( 20 )
-texture_pressed = ExtResource( 26 )
-texture_disabled = ExtResource( 30 )
-
-[node name="AudienceButton" type="TextureButton" parent="Overview/OverviewTable/VBoxContainer/JokerContainer"]
-margin_left = 322.0
-margin_top = 27.0
-margin_right = 473.0
-margin_bottom = 122.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture_normal = ExtResource( 21 )
-texture_pressed = ExtResource( 27 )
-texture_disabled = ExtResource( 29 )
-
-[node name="ItemList" type="ItemList" parent="Overview/OverviewTable/VBoxContainer"]
-margin_top = 154.0
-margin_right = 473.0
-margin_bottom = 664.0
-rect_min_size = Vector2( 0, 100 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/vseparation = 8
-custom_fonts/font = ExtResource( 24 )
-custom_styles/selected_focus = SubResource( 3 )
-custom_styles/selected = SubResource( 3 )
-custom_styles/bg = SubResource( 2 )
-items = [ "15   3xSchnaps", null, false, "14   2xSchnaps", null, false, "13   1xSchnaps", null, false, "12   1xSchnaps", null, false, "11   1xSchnaps", null, false, "10   5xWein", null, false, "  9   4xWein", null, false, "  8   3xWein", null, false, "  7   2xWein", null, false, "  6   1xWein", null, false, "  5   5xBier", null, false, "  4   4xBier", null, false, "  3   3xBier", null, false, "  2   2xBier", null, false, "  1   1xBier", null, false ]
-auto_height = true
-
-[node name="Tween" type="Tween" parent="Overview/OverviewTable"]
+[node name="OverviewTable" parent="Overview" instance=ExtResource("25_4ukqn")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+theme_override_styles/panel = ExtResource("26_op65b")
 
 [node name="Intro" type="Control" parent="."]
 visible = false
-margin_right = 1020.0
-margin_bottom = 198.0
+layout_mode = 2
 mouse_filter = 2
-
-[node name="TextureRect" type="TextureRect" parent="Intro"]
-anchor_right = 1.007
-anchor_bottom = 3.03
-margin_left = -467.0
-margin_top = -30.0
-margin_right = 105.86
-margin_bottom = 107.06
-texture = ExtResource( 32 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("25_3lhe5")
 
 [node name="ColorRect" type="ColorRect" parent="Intro"]
+layout_mode = 0
 anchor_right = 1.003
 anchor_bottom = 3.025
-margin_right = -0.0599976
-margin_bottom = 0.0499878
-__meta__ = {
-"_edit_use_anchors_": false
-}
+color = Color(0, 0, 0, 1)
 
-[node name="VideoPlayer" type="VideoPlayer" parent="Intro"]
+[node name="VideoPlayer" type="VideoStreamPlayer" parent="Intro"]
+layout_mode = 0
 anchor_right = 1.005
 anchor_bottom = 3.03
-margin_right = -0.0401001
-margin_bottom = 0.0599365
-stream = ExtResource( 31 )
+stream = ExtResource("35_2gbe2")
 volume_db = -80.0
 buffering_msec = 100
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Tween" type="Tween" parent="Intro"]

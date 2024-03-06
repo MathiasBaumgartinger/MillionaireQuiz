@@ -1,21 +1,23 @@
 extends Node
 
 
-export(String, FILE, ".json") var questions_file
+@export_file var questions_file
 
 var questions: Array
 
 
 func _ready():
-	var f = File.new()
-	f.open(questions_file, File.READ)
-	var json = JSON.parse(f.get_as_text())
+	var f = FileAccess.open(questions_file, FileAccess.READ)
+	var json = JSON.new()
+	var err = json.parse(f.get_as_text())
 	
-	if json.error != OK:
+	if err != OK:
 		print("Something went wrong while parsing questions ...")
+		print("JSON Parse Error: ", json.get_error_message(), 
+				" at line ", json.get_error_line())
 		return
 	
-	questions = json.result["questions"]
+	questions = json.data["questions"]
 
 
 func get_next_question():

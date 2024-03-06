@@ -1,24 +1,19 @@
 extends VBoxContainer
 
 
-onready var button_a = get_node("HBoxContainer/A")
-onready var button_b = get_node("HBoxContainer/B")
-onready var button_c = get_node("HBoxContainer2/C")
-onready var button_d = get_node("HBoxContainer2/D")
-onready var button_a_text = get_node("HBoxContainer/A/Margin/HBox/Label")
-onready var button_b_text = get_node("HBoxContainer/B/Margin/HBox/Label")
-onready var button_c_text = get_node("HBoxContainer2/C/Margin/HBox/Label")
-onready var button_d_text = get_node("HBoxContainer2/D/Margin/HBox/Label")
-onready var question_text = get_node("TitleHbox/PanelContainer/CenterContainer/RichTextLabel")
-onready var buttons = {
+@export var button_a: Button
+@export var button_b: Button
+@export var button_c: Button
+@export var button_d: Button
+
+@onready var question_text = get_node("TitleHbox/PanelContainer/CenterContainer/RichTextLabel")
+@onready var buttons = {
 	"A": button_a, "B": button_b, 
 	"C": button_c, "D": button_d
 }
-onready var normal_sb = load("res://ThemeElements/TemplateNormal.tres").duplicate()
 
-var locked_button
 var current_question: Dictionary
-var locked_option: String
+var locked_option: String = ""
 var question_no: int
 var correct_option: String
 var game_state: int
@@ -29,58 +24,72 @@ signal locked
 
 func _ready():
 	for button in buttons.values():
-		button.connect("toggled", self, "_question_locked", [button])
+		button.toggled.connect(func(_pressed): lock_answer(button))
+
+
+func _input(event: InputEvent):
+	if event.is_action_pressed("lock_option_a"):
+		lock_answer(buttons["A"])
+	elif event.is_action_pressed("lock_option_c"):
+		lock_answer(buttons["B"])
+	elif event.is_action_pressed("lock_option_b"):
+		lock_answer(buttons["C"])
+	elif event.is_action_pressed("lock_option_d"):
+		lock_answer(buttons["D"])
 
 
 func on_game_state_changed(state: int):
 	game_state = state
 	match state:
+		Game.GAME_STATE.empty:
+			reset_ui()
+			show()
 		Game.GAME_STATE.question:
-			reset_buttons()
 			setup_next_question()
 			question_text.visible = true
 		Game.GAME_STATE.A:
-			$HBoxContainer/A/Margin.visible = true
+			button_a.show_text()
 		Game.GAME_STATE.B:
-			$HBoxContainer/B/Margin.visible = true
+			button_b.show_text()
 		Game.GAME_STATE.C:
-			$HBoxContainer2/C/Margin.visible = true
+			button_c.show_text()
 		Game.GAME_STATE.D:
-			$HBoxContainer2/D/Margin.visible = true
+			button_d.show_text()
+		Game.GAME_STATE.answered:
+			check()
 
 
 func on_fty_fty():
 	if game_state != Game.GAME_STATE.D: return
 	
 	var hidden_count = 0
+	var first_rand = -INF
 	while hidden_count < 2:
 		print ("randi() mod %d + %d" % [Game.GAME_STATE.D - Game.GAME_STATE.A + 1, Game.GAME_STATE.A])
 		var rand = randi() % (Game.GAME_STATE.D - Game.GAME_STATE.A + 1) + Game.GAME_STATE.A
+		
+		# Do not double select the same button we want 50/50
+		if first_rand == rand:
+			continue
 		
 		# We do not want to hide a correct option
 		if Game.GAME_STATE.keys()[rand] != correct_option:
 			hidden_count += 1
 			print(Game.GAME_STATE.keys()[rand])
 			buttons[Game.GAME_STATE.keys()[rand]].get_node("Margin").visible = false
+			first_rand = rand
 
 
-func animate(locked_button, stylebox):
-	# There is nicer ways - works for now
-	locked_button.theme.set_stylebox("normal", "Button", stylebox)
-	yield(get_tree().create_timer(0.4), "timeout")
-	locked_button.theme.set_stylebox("normal", "Button", normal_sb)
-	yield(get_tree().create_timer(0.4), "timeout")
-	locked_button.theme.set_stylebox("normal", "Button", stylebox)
-	yield(get_tree().create_timer(0.3), "timeout")
-	locked_button.theme.set_stylebox("normal", "Button", normal_sb)
-	yield(get_tree().create_timer(0.3), "timeout")
-	locked_button.theme.set_stylebox("normal", "Button", stylebox)
-
-
-func reset_buttons():
+func reset_ui():
+	question_text.hide()
 	for button in buttons.values():
-		button.theme = load("res://MillonaireTheme.tres").duplicate()
-		button.get_node("Margin").visible = false
+		# If advanced into next game mode, the animation player
+		# might still be animating
+		button.stop_animations()
+		# The button might have an override for indicating
+		# correct (green) or wrong (red)
+		button.remove_theme_stylebox_override("normal")
+		button.hide_text()
 		button.toggle_mode = true
 
 
@@ -91,34 +100,35 @@ func setup_next_question():
 	question_text.visible = false
 	current_question = next_question
 	
-	question_text.bbcode_text = "[center]%s[/center]" % current_question["question"]
-	button_a_text.text = current_question["A"]
-	button_b_text.text = current_question["B"]
-	button_c_text.text = current_question["C"]
-	button_d_text.text = current_question["D"]
+	question_text.text = "[center]%s[/center]" % current_question["question"]
+	button_a.button_text = current_question["A"]
+	button_b.button_text = current_question["B"]
+	button_c.button_text = current_question["C"]
+	button_d.button_text = current_question["D"]
+
 	correct_option = current_question["correct"]
 
 
 func check():
-	if locked_option == null: return
+	if locked_option == "": return
 	
-	var locked_button: Button = buttons[locked_option]
-	locked_button.pressed = false
+	var locked_button = buttons[locked_option]
+	locked_button.button_pressed = false
 	locked_button.focus_mode = Control.FOCUS_NONE
 	if locked_option == correct_option:
-		emit_signal("answered", true)
-		animate(locked_button,
-			load("res://ThemeElements/TemplateCorrect.tres").duplicate())
+		answered.emit(true)
+		locked_button.start_animation("Correct")
 	else: 
-		emit_signal("answered", false)
-		animate(locked_button,
-			load("res://ThemeElements/TemplateWrong.tres").duplicate())
+		answered.emit(false)
+		locked_button.start_animation("Wrong")
+		# Indicate which would have been the right option
+		buttons[correct_option].start_animation("Correct")
 
 
-func _question_locked(presssed: bool, button: Button):
+func lock_answer(locked_button: Button):
 	for b in buttons.values():
-		if b != button:
-			b.pressed = false
+		if b != locked_button:
+			b.button_pressed = false
 	
-	locked_option = button.name
-	emit_signal("locked")
+	locked_option = locked_button.name
+	locked.emit()
