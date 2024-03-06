@@ -1,43 +1,66 @@
-[gd_resource type="Theme" load_steps=11 format=2]
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://cwb5cke0u6bsl"]
 
-[ext_resource path="res://ThemeElements/TemplateNormal.tres" type="StyleBox" id=1]
-[ext_resource path="res://Resoures/StyleTemplateHover.png" type="Texture" id=2]
-[ext_resource path="res://Resoures/StyleTemplateLocked.svg" type="Texture" id=3]
-[ext_resource path="res://Resoures/StyleFocus.png" type="Texture" id=4]
-[ext_resource path="res://ThemeElements/TextWhite.tres" type="DynamicFont" id=5]
+[ext_resource type="StyleBox" uid="uid://6h2s6i4vy3gs" path="res://ThemeElements/TemplateNormal.tres" id="1"]
+[ext_resource type="StyleBox" path="res://ThemeElements/TemplateCorrect.tres" id="1_wvp0c"]
+[ext_resource type="Texture2D" uid="uid://htnvjsws8xpw" path="res://Resoures/StyleTemplateHover.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cs1mee1famx1g" path="res://Resoures/StyleTemplateLocked.svg" id="3"]
+[ext_resource type="Texture2D" uid="uid://duds58nb413ry" path="res://Resoures/StyleFocus.png" id="4"]
+[ext_resource type="FontFile" path="res://ThemeElements/TextWhite.tres" id="5"]
+[ext_resource type="StyleBox" uid="uid://c6kkmiwp2rpbo" path="res://ThemeElements/TemplateWrong.tres" id="6_bkd30"]
 
-[sub_resource type="StyleBoxTexture" id=7]
-texture = ExtResource( 4 )
-region_rect = Rect2( 0, 0, 1214, 138 )
+[sub_resource type="StyleBoxTexture" id="7"]
+texture = ExtResource("4")
+region_rect = Rect2(0, 0, 1214, 138)
 
-[sub_resource type="StyleBoxTexture" id=1]
-texture = ExtResource( 2 )
-region_rect = Rect2( 0, 0, 1214, 138 )
+[sub_resource type="StyleBoxTexture" id="1"]
+texture = ExtResource("2")
+region_rect = Rect2(0, 0, 1214, 138)
 
-[sub_resource type="StyleBoxTexture" id=3]
-texture = ExtResource( 3 )
-region_rect = Rect2( 0, 0, 388, 44 )
+[sub_resource type="StyleBoxTexture" id="3"]
+texture = ExtResource("3")
+region_rect = Rect2(0, 0, 388, 44)
 
-[sub_resource type="StyleBoxLine" id=6]
-color = Color( 0.239216, 0.286275, 0.501961, 1 )
+[sub_resource type="StyleBoxLine" id="6"]
+color = Color(0.239216, 0.286275, 0.501961, 1)
 grow_begin = 5.0
 grow_end = 5.0
 thickness = 4
 
-[sub_resource type="StyleBoxLine" id=5]
-color = Color( 0.207843, 0.247059, 0.470588, 1 )
+[sub_resource type="StyleBoxLine" id="5"]
+color = Color(0.207843, 0.247059, 0.470588, 1)
 vertical = true
 
 [resource]
-Button/styles/disabled = ExtResource( 1 )
-Button/styles/focus = SubResource( 7 )
-Button/styles/hover = SubResource( 1 )
-Button/styles/normal = ExtResource( 1 )
-Button/styles/pressed = SubResource( 3 )
-HSeparator/styles/separator = SubResource( 6 )
-Label/fonts/font = ExtResource( 5 )
+default_font = ExtResource("5")
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/styles/correct = ExtResource("1_wvp0c")
+Button/styles/default = ExtResource("1")
+Button/styles/disabled = ExtResource("1")
+Button/styles/focus = SubResource("7")
+Button/styles/hover = SubResource("1")
+Button/styles/normal = ExtResource("1")
+Button/styles/pressed = SubResource("3")
+Button/styles/wrong = ExtResource("6_bkd30")
+HSeparator/styles/separator = SubResource("6")
+Label/fonts/font = ExtResource("5")
 Panel/constants/panel = 0
-Panel/styles/panel = ExtResource( 1 )
-PanelContainer/styles/panel = ExtResource( 1 )
-RichTextLabel/fonts/normal_font = ExtResource( 5 )
-VSeparator/styles/separator = SubResource( 5 )
+Panel/styles/panel = ExtResource("1")
+PanelContainer/styles/panel = ExtResource("1")
+RichTextLabel/fonts/normal_font = ExtResource("5")
+VSeparator/styles/separator = SubResource("5")
