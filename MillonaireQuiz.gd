@@ -70,7 +70,7 @@ func _input(event: InputEvent):
 
 
 func _adapt_font_size():
-	theme.set_font_size("default", "default", int(get_viewport_rect().size.y * 0.025))
+	theme.default_font_size = int(get_viewport_rect().size.y * 0.025)
 
 
 func progress():

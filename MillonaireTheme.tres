@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://htnvjsws8xpw" path="res://Resoures/StyleTemplateHover.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://cs1mee1famx1g" path="res://Resoures/StyleTemplateLocked.svg" id="3"]
 [ext_resource type="Texture2D" uid="uid://duds58nb413ry" path="res://Resoures/StyleFocus.png" id="4"]
-[ext_resource type="FontFile" path="res://ThemeElements/TextWhite.tres" id="5"]
 [ext_resource type="StyleBox" uid="uid://c6kkmiwp2rpbo" path="res://ThemeElements/TemplateWrong.tres" id="6_bkd30"]
+[ext_resource type="FontFile" uid="uid://b1xwucwgbesfp" path="res://Resoures/Swansea-q3pd.ttf" id="8_q1q6f"]
 
 [sub_resource type="StyleBoxTexture" id="7"]
 texture = ExtResource("4")
@@ -31,7 +31,7 @@ color = Color(0.207843, 0.247059, 0.470588, 1)
 vertical = true
 
 [resource]
-default_font = ExtResource("5")
+default_font = ExtResource("8_q1q6f")
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
 Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
 Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
@@ -58,9 +58,7 @@ Button/styles/normal = ExtResource("1")
 Button/styles/pressed = SubResource("3")
 Button/styles/wrong = ExtResource("6_bkd30")
 HSeparator/styles/separator = SubResource("6")
-Label/fonts/font = ExtResource("5")
 Panel/constants/panel = 0
 Panel/styles/panel = ExtResource("1")
 PanelContainer/styles/panel = ExtResource("1")
-RichTextLabel/fonts/normal_font = ExtResource("5")
 VSeparator/styles/separator = SubResource("5")
