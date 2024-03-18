@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://dns40dwgkxfh6"]
+
+[ext_resource type="Script" path="res://OverviewTable.gd" id="1_lkvkb"]
+[ext_resource type="Texture2D" uid="uid://ba5kmwjtamoqh" path="res://Resoures/5050.png" id="2_qanl6"]
+[ext_resource type="Texture2D" uid="uid://bkhfl7k3qxehv" path="res://Resoures/5050_pressed.png" id="3_tg3yv"]
+[ext_resource type="Texture2D" uid="uid://de67ucsqbli04" path="res://Resoures/5050_disabled.png" id="4_rnhn0"]
+[ext_resource type="Texture2D" uid="uid://c3nibe83ogscf" path="res://Resoures/telephone.png" id="5_6vp37"]
+[ext_resource type="Texture2D" uid="uid://03ujx6ocewa4" path="res://Resoures/telephone_pressed.png" id="6_fxau5"]
+[ext_resource type="Texture2D" uid="uid://oku3fvisr56j" path="res://Resoures/telephone_disabled.png" id="7_nh53d"]
+[ext_resource type="Texture2D" uid="uid://covcvqt5wetxf" path="res://Resoures/ask_audience.png" id="8_8l372"]
+[ext_resource type="Texture2D" uid="uid://jgpuacsnfoam" path="res://Resoures/audience_pressed.png" id="9_xv4j0"]
+[ext_resource type="Texture2D" uid="uid://bmc1op3fwdmoa" path="res://Resoures/audience_disabled.png" id="10_mht7c"]
+
+[node name="OverviewTable" type="PanelContainer"]
+anchors_preset = -1
+anchor_left = 0.76
+anchor_right = 1.004
+anchor_bottom = 3.005
+script = ExtResource("1_lkvkb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="JokerContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="FtyFtyButton" type="TextureButton" parent="VBoxContainer/JokerContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 1
+texture_normal = ExtResource("2_qanl6")
+texture_pressed = ExtResource("3_tg3yv")
+texture_disabled = ExtResource("4_rnhn0")
+
+[node name="CallButton" type="TextureButton" parent="VBoxContainer/JokerContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_6vp37")
+texture_pressed = ExtResource("6_fxau5")
+texture_disabled = ExtResource("7_nh53d")
+
+[node name="AudienceButton" type="TextureButton" parent="VBoxContainer/JokerContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("8_8l372")
+texture_pressed = ExtResource("9_xv4j0")
+texture_disabled = ExtResource("10_mht7c")
+
+[node name="ItemList" type="ItemList" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+auto_height = true
+item_count = 15
+item_0/text = "15   3xSchnaps"
+item_1/text = "14   2xSchnaps"
+item_2/text = "13   1xSchnaps"
+item_3/text = "12   1xSchnaps"
+item_4/text = "11   1xSchnaps"
+item_5/text = "10   5xWein"
+item_6/text = "  9   4xWein"
+item_7/text = "  8   3xWein"
+item_8/text = "  7   2xWein"
+item_9/text = "  6   1xWein"
+item_10/text = "  5   5xBier"
+item_11/text = "  4   4xBier"
+item_12/text = "  3   3xBier"
+item_13/text = "  2   2xBier"
+item_14/text = "  1   1xBier"
