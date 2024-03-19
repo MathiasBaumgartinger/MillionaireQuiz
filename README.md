@@ -1,6 +1,6 @@
 # MillionaireQuiz
 
-<img src="https://github.com/MathiasBaumgartinger/MillionaireQuiz/blob/main/Resources/demo.png">
+<img src="https://github.com/MathiasBaumgartinger/MillionaireQuiz/blob/main/Resoures/demo.png?raw=true">
 
 Based on shows like "Who wants to be a Millionaire", this is a quiz template meant for easy personalization. Makes a great fit for the next wedding, bachelor's, or birthday party or just testing your friends. I have searched for something like this for my brother's birthday party and could not find anything. So I decided to create my own version and share it with you.
 
