@@ -27,7 +27,6 @@ Follow the `questions.json` format with the following structure:
 			"D": "François de Louvois",
 			"correct": "A"
 		},
-        ...
     ]
 }
 ```
