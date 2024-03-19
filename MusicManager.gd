@@ -48,7 +48,7 @@ func play(game_state: int, question_no: int):
 			elif question_no > 6:
 				$MusicPlayer2.stream = lights_to_center_from6
 				$MusicPlayer2.stream.loop = false
-				$MusicPlayer2.playing = true				
+				$MusicPlayer2.playing = true
 			if question_no <= 5:
 				if $MusicPlayer1.playing: return
 				$MusicPlayer1.stream = questions_1to5
@@ -88,9 +88,6 @@ func play(game_state: int, question_no: int):
 
 
 func on_fty_fty():
-	#$MusicPlayer1.playing = false
 	$JokerPlayer.stream = fty_fty
 	$JokerPlayer.stream.loop = false
 	$JokerPlayer.play()
-	#yield($JokerPlayer, "finished")
-	#$MusicPlayer1.play()
